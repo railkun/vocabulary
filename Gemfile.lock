@@ -43,7 +43,6 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
-    byebug (8.2.2)
     coderay (1.1.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
@@ -91,6 +90,7 @@ GEM
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     orm_adapter (0.5.0)
+    pg (0.18.4)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -169,7 +169,6 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
-  byebug
   coffee-rails (~> 4.1.0)
   devise
   jbuilder (~> 2.0)
@@ -177,6 +176,7 @@ DEPENDENCIES
   material_icons
   materialize-sass
   mysql2
+  pg
   pry
   rails (= 4.2.5.1)
   sass-rails (~> 5.0)
