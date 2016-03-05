@@ -1,0 +1,29 @@
+<% if @word.errors.full_messages.any? %>
+  <% @word.errors.full_messages.each do |error_message| %>
+    <%= error_message if @word.errors.full_messages.first == error_message %> <br />
+  <% end %>
+<% end %>
+
+<%= form_for @word, html: { class: 'col s12'} do |f| %>
+  <div class="row">
+    <div class="input-field col s6">
+      <%= f.text_field :title%>
+      <%= f.label :title %>
+    </div>
+    <div class="input-field col s6">
+      <%= f.text_field :translation %>
+      <%= f.label :translation %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s6">
+      <%= f.text_field :tag_list%>
+      <%= f.label :tag_list %>
+    </div>
+  </div>
+  <% if @word.persisted? %>
+    <%= f.submit 'Update', class: 'waves-effect waves-light btn' %>
+  <% else %>
+    <%= f.submit 'Create', class: 'waves-effect waves-light btn' %>
+  <% end %>
+<% end %>

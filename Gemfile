@@ -26,6 +26,9 @@ gem 'materialize-sass'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
+gem 'material_icons'
+gem 'pry'
+gem 'acts-as-taggable-on'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
