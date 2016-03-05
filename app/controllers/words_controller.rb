@@ -4,9 +4,11 @@ class WordsController < ApplicationController
     @words = current_user.words
     @tags = current_user.words.tag_counts_on(:tags)
   end
+
   def new
     @word = Word.new
   end
+
   def create
     @word = Word.new(word_params)
     @word.user = current_user
