@@ -1,7 +1,7 @@
 class WordsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @words = current_user.words
+    @words = current_user.words.page(params[:page])
     @tags = current_user.words.tag_counts_on(:tags)
   end
 
