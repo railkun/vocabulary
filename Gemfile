@@ -31,6 +31,7 @@ gem 'material_icons'
 gem 'pry'
 gem 'acts-as-taggable-on'
 gem 'kaminari'
+gem 'carrierwave'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

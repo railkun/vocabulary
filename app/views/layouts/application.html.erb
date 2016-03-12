@@ -13,10 +13,18 @@
           <i class="material-icons">account_balance</i>
         <% end %>
         <ul class="right hide-on-med-and-down">
-          <li>        <% if user_signed_in? %>
-                    <%= link_to('Edit profile' , edit_user_registration_path) %> </li>
-          <li>      <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-                  <% end %></li>
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to edit_user_registration_path  do%>
+                <%= image_tag(current_user.avatar.url, class: "responsive-img ", style: 'max-height: 64.4px;') %>
+                <%= current_user.user_name %>
+              <% end %>
+
+            </li>
+            <li>
+              <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+            </li>
+          <% end %>
         </ul>
 
         <ul id="nav-mobile" class="side-nav blue-grey darken-">
