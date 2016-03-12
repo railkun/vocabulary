@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'landings#index'
 
-  resources :words
+  resources :words do
+    # get 'tag', on: :member
+    get 'tag', on: :collection
+  end
 
 
   # You can have the root of your site routed with "root"

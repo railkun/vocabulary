@@ -1,0 +1,24 @@
+<table class="bordered highlight" >
+  <tr>
+    <th> Title </th>
+    <th> Translation </th>
+    <th></th>
+
+  </tr>
+  <% @words.each do |word| %>
+    <tr>
+      <td> <%= word.title %> </td>
+      <td> <%= word.translation %> </td>
+      <td>
+      <%= link_to  edit_word_path(word),  class: "btn-floating btn waves-effect waves-light  blue darken-1" do %>
+        <i class="material-icons">mode_edit</i>
+      <% end %>
+      <%= link_to  word_path(word),  class: "btn-floating btn  waves-effect waves-light red",  method: :delete, "data-confirm": 'Are you sure?' do %>
+        <i class="material-icons">delete</i>
+      <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<%= paginate @words %>
+<%= page_entries_info @words, :entry_name => 'word' %>
