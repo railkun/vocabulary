@@ -1,7 +1,9 @@
 <div class="container"  >
   <%= link_to "Edit profile" edit_user_registration_path %>
   <% if current_user.avatar.present? %>
-  <%= image_tag(current_user.avatar.url, class: "responsive-img ", style: 'max-height: 200px;') %>
+    <%= image_tag(current_user.avatar.url, class: "responsive-img ", style: 'max-height: 200px;') %>
   <% end %>
-  <%= current_user.user_name %>
+  <% if current_user.user_name.present? %>
+    <%= current_user.user_name %>
+  <% end %>
 </div>
