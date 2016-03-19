@@ -1,6 +1,5 @@
 <div class="container"  >
-  <%= link_to edit_user_registration_path  do%>
+  <%= link_to "edit_profile" edit_user_registration_path %>
   <%= image_tag(current_user.avatar.url, class: "responsive-img ", style: 'max-height: 200px;') %>
   <%= current_user.user_name %>
-  <% end %>
 </div>
