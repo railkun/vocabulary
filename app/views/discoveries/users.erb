@@ -6,8 +6,9 @@
           <%= image_tag(user.avatar.url, class: "circle responsive-img ", style: 'max-height: 200px;') %>
         </div>
         <div class="col s10">
-          <span class="black-text">
+          <span class="black-text " >
             <strong><%= user.user_name %></strong>
+              (<strong><%= user.words.count %></strong>)
           </span>
         </div>
       </div>
