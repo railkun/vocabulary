@@ -8,6 +8,8 @@
   <div class="form-group">
     <%= f.label :Avatar %>
     <%= f.file_field :avatar %>
+    <%= f.hidden_field(:avatar_cache) %>
+
   </div>
 
   <div class="field">

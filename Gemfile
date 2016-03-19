@@ -32,6 +32,7 @@ gem 'pry'
 gem 'acts-as-taggable-on'
 gem 'kaminari'
 gem 'carrierwave'
+gem 'cloudinary'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

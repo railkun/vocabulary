@@ -9,29 +9,37 @@
 <body>
   <nav class="blue-grey darken-2">
       <div class="nav-wrapper blue-grey darken-2 container">
-        <%= link_to words_path, class:"brand-logo", style:"" do%>
-          <i class="material-icons">account_balance</i>
-        <% end %>
+        <ul class="left hide-on-med-and-down">
+          <li>
+            <%= link_to words_path, class:"", style:"" do%>
+              <i class="material-icons">account_balance</i>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to users_discoveries_path, class:"", style:"" do %>
+              <i class="material-icons">assignment_ind</i>
+            <% end %>
+          </li>
+        </ul>
         <ul class="right hide-on-med-and-down">
           <% if user_signed_in? %>
             <li>
-              <%= link_to edit_user_registration_path  do%>
-                <%= image_tag(current_user.avatar.url, class: "responsive-img ", style: 'max-height: 64.4px;') %>
-                <%= current_user.user_name %>
-              <% end %>
-
+              <%= link_to('Profile', profile_words_path) %>
+            </li>
+            <li>
+              <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+            </li>
+            <% end %>
+        </ul>
+        <ul id="nav-mobile" class="side-nav blue-grey darken-">
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to('Profile', profile_words_path) %>
             </li>
             <li>
               <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
             </li>
           <% end %>
-        </ul>
-
-        <ul id="nav-mobile" class="side-nav blue-grey darken-">
-          <li>        <% if user_signed_in? %>
-                    <%= link_to('Edit profile' , edit_user_registration_path) %> </li>
-          <li>      <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-                  <% end %></li>
         </ul>
 
 

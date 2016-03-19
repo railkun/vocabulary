@@ -12,9 +12,12 @@ Rails.application.routes.draw do
   resources :words do
     # get 'tag', on: :member
     get 'tag', on: :collection
+    get 'profile', on: :collection
   end
 
-
+  resources :discoveries, only: [] do
+    get 'users', on: :collection
+  end
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

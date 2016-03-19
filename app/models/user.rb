@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
 
   has_many :words
   mount_uploader :avatar, AvatarUploader
+  validates :user_name, uniqueness: true
 end

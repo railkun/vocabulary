@@ -1,5 +1,7 @@
 class WordsController < ApplicationController
   before_action :authenticate_user!
+  
+
   def index
     @words_count = current_user.words.count
     @words = current_user.words.page(params[:page])
@@ -20,10 +22,10 @@ class WordsController < ApplicationController
     end
   end
   def edit
-    @word = Word.find(params[:id])
+    @word = current_user.words.find(params[:id])
   end
     def update
-    @word = Word.find(params[:id])
+    @word = current_user.words.find(params[:id])
     if @word.update_attributes(word_params)
       redirect_to root_path, notice: 'Book was updated'
     else
@@ -32,7 +34,7 @@ class WordsController < ApplicationController
   end
 
   def destroy
-    @word = Word.find(params[:id])
+    @word = current_user.words.find(params[:id])
     if @word.destroy
       redirect_to root_path, notice: 'Book was destroyed!!!'
     else
@@ -43,6 +45,9 @@ class WordsController < ApplicationController
   def tag
     @words = current_user.words.tagged_with(params[:tag_name]).page(params[:page])
     @tags = current_user.words.tag_counts_on(:tags)
+  end
+
+  def profile
   end
 
   private

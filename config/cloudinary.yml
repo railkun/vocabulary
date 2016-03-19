@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: railkun
+  api_key: '721136294624129'
+  api_secret: oSJwmGpAPFJ1I6zfBqVMIN70aog
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: railkun
+  api_key: '721136294624129'
+  api_secret: oSJwmGpAPFJ1I6zfBqVMIN70aog
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: railkun
+  api_key: '721136294624129'
+  api_secret: oSJwmGpAPFJ1I6zfBqVMIN70aog
+  enhance_image_tag: true
+  static_image_support: false

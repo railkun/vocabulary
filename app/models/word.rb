@@ -4,5 +4,6 @@ class Word < ActiveRecord::Base
 
   validates :title, presence: true
   validates :translation, presence: true
+  validates :title, uniqueness: {scope: :user}
   paginates_per 10
 end
